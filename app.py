@@ -103,12 +103,6 @@ def main():
 
         print(f"Bingo on Card {winning}!")
 
-        for card_number, card in cards.items():
-            if check_bingo(card):
-                winning = card_number
-                print(f"Winning is {card_number}")
-                responses.append([f"Bingo on Card {card_number}!"]) 
-
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             for response in responses:
@@ -118,6 +112,12 @@ def main():
         # Add assistant response to chat history
         for response in responses:
             st.session_state.messages.append({"role": "assistant", "content": f"{response}"})
+
+        for card_number, card in cards.items():
+            if check_bingo(card):
+                winning = card_number
+                print(f"Winning is {card_number}")
+                st.success([f"Bingo on Card {card_number}!"]) 
 
 
 if __name__ == "__main__":
