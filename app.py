@@ -91,10 +91,9 @@ def main():
         #    pass
 
         # Display assistant response in chat message container
-        with st.chat_message("assistant"):
-            for response in responses:
-                print(response)
-                st.markdown(f"{response}")
+        for response in responses:
+            print(response)
+            st.write(f"{response}")
 
         for card_number, card in cards.items():
             if check_bingo(card):
