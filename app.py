@@ -65,7 +65,7 @@ def main():
     winning = None
 
     # Display card data when button is clicked
-    if number_input := st.chat_input("Find Card"):
+    if number_input := st.chat_input(""):
       
         number_input = int(number_input)
         st.session_state.used_numbers.append(number_input)
