@@ -107,7 +107,7 @@ def main():
             if check_bingo(card):
                 winning = card_number
                 print(f"Winning is {card_number}")
-                responses = [f"Bingo on Card {card_number}!"] 
+                responses.append([f"Bingo on Card {card_number}!"]) 
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
