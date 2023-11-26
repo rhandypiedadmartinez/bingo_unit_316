@@ -93,7 +93,7 @@ def main():
         if is_changed:
             responses = [changes]
         else:
-            responses = [f"Card {number_input} not found."]
+            st.error(f"Card {number_input} not found.")
 
         cards = st.session_state.cards 
         # for card_number, card in cards.items():
@@ -117,7 +117,7 @@ def main():
             if check_bingo(card):
                 winning = card_number
                 print(f"Winning is {card_number}")
-                st.success([f"Bingo on Card {card_number}!"]) 
+                st.success(f"Bingo on Card {card_number}!") 
 
 
 if __name__ == "__main__":
